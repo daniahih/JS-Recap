@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Initial Data
+      const students = [
+        { name: "Alice", grade: 90 },
+        { name: "Bob", grade: 85 },
+        { name: "Charlie", grade: 92 },
+      ];
+
+      // Task 1: Add New Students
+      students.push(
+        { name: "David", grade: 88 },
+        { name: "Eve", grade: 76 },
+        { name: "Frank", grade: 93 }
+      );
+
+      // Task 2: Remove Last Student
+      students.pop();
+
+      // Task 3: Add Students at Beginning
+      students.unshift(
+        { name: "Grace", grade: 79 },
+        { name: "Hannah", grade: 91 }
+      );
+
+      // Task 4: Remove First Student
+      students.shift();
+
+      // Task 5: High Achievers
+      const highAchievers = students.filter((student) => student.grade > 90);
+
+      // Task 6: Sort by Grade
+      highAchievers.sort((a, b) => b.grade - a.grade);
+
+      // Task 7: Square the Grades
+      const squaredGrades = students.map((student) => student.grade ** 2);
+
+      // Task 8: Total Grade
+      const totalGrade = students.reduce(
+        (sum, student) => sum + student.grade,
+        0
+      );
+
+      // Task 9: Are All Students Passing?
+      const allPassing = students.every((student) => student.grade > 60);
+
+      // Task 10: Is Anyone Failing?
+      const anyFailing = students.some((student) => student.grade < 60);
+
+      // Task 11: Find First Average Student
+      const firstAverageStudent = students.find(
+        (student) => student.grade === 85
+      );
+
+      // Task 12 (Bonus): Custom Greeting for All
+      students.forEach((student) =>
+        console.log(`Hello ${student.name}, your grade is ${student.grade}`)
+      );
+
+      // Outputs for demonstration
+      console.log("High Achievers:", highAchievers);
+      console.log("Squared Grades:", squaredGrades);
+      console.log("Total Grade:", totalGrade);
+      console.log("Are all students passing?", allPassing);
+      console.log("Is anyone failing?", anyFailing);
+      console.log("First average student:", firstAverageStudent);
+    </script>
+  </body>
+</html>
